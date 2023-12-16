@@ -22,4 +22,4 @@ jobs:
         cache: 'yarn'
 
     - name: Install Dependencies
-      run: yarn install --frozen-lockfile --non-interactive --immutable
+      run: yarn install --non-interactive
