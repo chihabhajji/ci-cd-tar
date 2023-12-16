@@ -17,6 +17,14 @@ jobs:
 
     - name: Setup Node
       uses: actions/setup-node@v3
+
+    - name: Cache Yarn dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/yarn
+        key: yarn-${{ runner.os }}-${{ hashFiles('**/*.lock') }}
+        restore-keys: |
+          yarn-${{ runner.os }}-
       
     - name: Install Dependencies
       run: yarn install
