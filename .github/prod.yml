@@ -1,0 +1,25 @@
+name: Deploy Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        ref: main
+        fetch-depth: 0
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'
+        cache: 'yarn'
+
+    - name: Install Dependencies
+      run: yarn install --frozen-lockfile --non-interactive --immutable
