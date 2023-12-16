@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nestjs-library-crud": ".\\libraries\\nestjs-library-crud.tar.gz",
+    "nestjs-library-crud": "file:libraries\\nestjs-library-crud.tar.gz",
     "express": "~4.18.2"
   }
 }
